@@ -10,10 +10,12 @@ public class Logica {
 	protected String[] datos;
 	protected PImage imgHomero, imgBart, imgLisa;
 	protected ArrayList<Homero> homerito;
+	protected int[] Array; 
 	protected boolean act1;
 
 	public Logica(PApplet app) {
 		this.app = app;
+		Array = new int[3];
 		//activador
 		act1 = false;
 		// cargar texto
@@ -38,7 +40,9 @@ public class Logica {
 			int posY = Integer.parseInt(datosTemp[3]);
 
 			if (tipo == 1) {
+				
 				Homero temp = new Homero(app, tipo, imgHomero, posX, posY);
+				
 				temp.start();
 				homerito.add(temp);
 			}
@@ -56,6 +60,8 @@ public class Logica {
 
 		}
 	}
+
+	
 
 	public void pintar() {
 		app.background(0);

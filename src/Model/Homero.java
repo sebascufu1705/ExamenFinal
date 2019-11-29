@@ -12,10 +12,11 @@ public class Homero extends Thread{
 	private int vel;
 	public Homero(PApplet app, int tipo, PImage img, int posX, int posY) {
 		this.app = app;
+		this.vel = 10;
 		this.img=img;
 		this.posX=posX;
 		this.posY=posY;
-		this.vel = posX*20;
+		
 	
 	}
 	public void run() {
@@ -35,11 +36,9 @@ public class Homero extends Thread{
 		
 	}
 	public void pintar() {
+		
 		app.image(img, posX++, posY,100,100);
-		if(posX>=800) {
-			app.image(img, posX--, posY,100,100);
-			
-		}
+		
 		
 		
 		
