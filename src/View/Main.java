@@ -20,6 +20,10 @@ public class Main extends PApplet {
 	}
 	public void draw() {
 		logic.pintar();
+		
 		}
+	public void mouseClicked() {
+		logic.click();
+	}
 }
 

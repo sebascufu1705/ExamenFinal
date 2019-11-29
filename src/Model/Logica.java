@@ -10,9 +10,12 @@ public class Logica {
 	protected String[] datos;
 	protected PImage imgHomero, imgBart, imgLisa;
 	protected ArrayList<Homero> homerito;
+	protected boolean act1;
 
 	public Logica(PApplet app) {
 		this.app = app;
+		//activador
+		act1 = false;
 		// cargar texto
 
 		datos = app.loadStrings("../data/archivo.txt");
@@ -58,14 +61,22 @@ public class Logica {
 		app.background(0);
 		
 		// ---------------------------------
+if (act1 == true) {
+	for (int i = 0; i < homerito.size(); i++) {
+		Homero temp = homerito.get(i);
+		temp.pintar();
 
-		for (int i = 0; i < homerito.size(); i++) {
-			Homero temp = homerito.get(i);
-			temp.pintar();
-
-		}
+	}
+}
+		
+		app.rect(800,600, 60, 60);
 
 		
 
+	}
+	public void click() {
+		if(app.mouseX>800 && app.mouseX<850&& app.mouseY>600&&app.mouseY<650) {
+			act1 = true;
+		}
 	}
 }

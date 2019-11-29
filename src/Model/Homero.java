@@ -9,12 +9,13 @@ public class Homero extends Thread{
 	private PImage img;
 	private int posX;
 	private int posY;
+	private int vel;
 	public Homero(PApplet app, int tipo, PImage img, int posX, int posY) {
 		this.app = app;
 		this.img=img;
 		this.posX=posX;
 		this.posY=posY;
-		this.vel = vel;
+		this.vel = posX*20;
 	
 	}
 	public void run() {
@@ -29,15 +30,22 @@ public class Homero extends Thread{
 		}
 		
 	}
-	public void pintar() {
-		app.image(img, posX, posY);
-	}
+	
 	public void mover() {
 		
 	}
-	
+	public void pintar() {
+		app.image(img, posX++, posY,100,100);
+		if(posX>=800) {
+			app.image(img, posX--, posY,100,100);
+			
+		}
+		
+		
+		
+		
 
+		
+	}
 	
-	
-
 }
